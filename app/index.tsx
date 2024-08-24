@@ -5,10 +5,10 @@ import { Link } from "expo-router";
 
 export default function HomeScreen() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-3xl">Seha!</Text>
-      <Link href="/(tabs)/explore" style={{ color: "purple" }}>
-        Go to profile
+    <View className="flex-1 items-center justify-center bg-zinc-900">
+      <Text className="text-3xl text-white font-pblack">Seha!</Text>
+      <Link href="/home" style={{ color: "skyblue" }}>
+        Go to home
       </Link>
       <StatusBar />
     </View>

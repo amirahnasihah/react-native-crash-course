@@ -1,5 +1,7 @@
 # Default code
 
+`npx install-expo-modules@latest`
+
 ## /(tabs)/index.tsx -> home page
 
 ```typescript
@@ -123,3 +125,41 @@ export default function TabLayout() {
   );
 }
 ```
+
+# useFonts special hook to load the font
+
+- open in root layout; `_layout.tsx`
+
+```typescript
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
+
+export default function RootLayout() {
+  const [fontsLoaded, error] = useFonts({
+    MainFont: require("../assets/fonts/Quicksand-Regular.ttf"),
+  });
+
+   useEffect(() => {
+    if (error) throw error;
+    // Hide the splash screen once assets have loaded.
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, error]);
+
+  if (!fontsLoaded && !error) {
+    return null;
+  }
+
+  return (
+    ...
+  );
+}
+```
+
+> useEffect(): allows us to perform some actions while the page/screen is loading.
+> useEffect provided a callback function and a dependency array. within the dependency array, put `fontsLoaded`, meaning recall this function whenever fontsLoaded change or whenever there's an error.
+
+# Tabs
+
+> https://reactnavigation.org/docs/bottom-tab-navigator/#options 
