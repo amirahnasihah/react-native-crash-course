@@ -47,13 +47,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </SafeAreaView>
+      <Stack>
+        {/* Hide title above the screen ex; index */}
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
+        <Stack.Screen name="+not-found" />
+      </Stack>
     </ThemeProvider>
   );
 }
