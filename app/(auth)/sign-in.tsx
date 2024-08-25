@@ -1,17 +1,10 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  Dimensions,
-  TextInput,
-} from "react-native";
+import { View, Text, ScrollView, Image, Dimensions } from "react-native";
 import React, { useState } from "react";
 import images from "../../constants/Images";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";
 import { Link, router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -45,7 +38,7 @@ const SignIn = () => {
           <FormField
             title="Email"
             value={form.email}
-            placeholder="Enter your email"
+            placeholder="email@example.com"
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
           />
