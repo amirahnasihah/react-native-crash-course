@@ -1,4 +1,11 @@
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  KeyboardTypeOptions,
+} from "react-native";
 import React, { useState } from "react";
 import icons from "@/constants/Icons";
 
@@ -9,6 +16,7 @@ interface FormFieldProps {
   placeholder?: string;
   handleChangeText?: (text: string) => void; // Corrected to function type
   otherStyles?: string; // Assuming this might be a className string
+  keyboardType?: string;
 }
 
 const FormField: React.FC<FormFieldProps> = ({
@@ -32,7 +40,7 @@ const FormField: React.FC<FormFieldProps> = ({
           value={value}
           onChangeText={handleChangeText} // onChangeText is used to handle input changes in TextInput
           secureTextEntry={title === "Password" && !showPassword}
-          {...props}
+          keyboardType={props.keyboardType as KeyboardTypeOptions} // Add this line to use the keyboardType prop
         />
 
         {title === "Password" && (
