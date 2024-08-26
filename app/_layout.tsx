@@ -50,7 +50,9 @@ export default function RootLayout() {
       <Stack>
         {/* Hide title above the screen ex; index */}
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="/search/[query]" options={{ headerShown: false }} /> */}
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
