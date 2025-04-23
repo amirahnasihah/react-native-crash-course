@@ -51,4 +51,4 @@ Join our community of developers creating universal apps.
 - Upgrade Expo version to latest.
 - Upgrade dependencies.
 
-storybook ai
+storybook ai children
